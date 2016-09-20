@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -17,14 +18,16 @@ public class Main2Activity extends AppCompatActivity {
         String value2 = intent.getStringExtra("VALUE2");
         int Calc = intent.getIntExtra("Calc", 0);
 
-        if (value1.compareTo("") == 0) {
-            value1 = "0";
+       if (value1.compareTo("") == 0) {
+            Toast.makeText(this, "入力してください。", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         if (value2.compareTo("") == 0) {
-            value2 = "0";
+            Toast.makeText(this, "入力してください。", Toast.LENGTH_SHORT).show();
+            return;
         }
-
+        
         if (Calc == 1) {
             Double a = Double.parseDouble(value1);
             Double b = Double.parseDouble(value2);
